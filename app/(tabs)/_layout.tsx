@@ -22,6 +22,34 @@ function TabLayout() {
                 }}
             />
 
+            <Tabs.Screen 
+                name="principals"
+                options={{
+                    title: "Principals",
+                    tabBarIcon: ({color, focused}) => (
+                        <Ionicicons 
+                            name={focused ? "book-sharp" : "book-outline"}
+                            color={color}
+                            size={24}
+                        />
+                    )
+                }}
+            />
+
+            <Tabs.Screen 
+                name="resources"
+                options={{
+                    title: "Resources",
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicicons 
+                            name={focused ? "library-sharp" : "library-outline"}
+                            color={color}
+                            size={24}
+                        />
+                    )
+                }}
+            />
+
             <Tabs.Screen
                 name="about"
                 options={{
