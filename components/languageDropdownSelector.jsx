@@ -1,11 +1,13 @@
 import DropDownPicker from 'react-native-dropdown-picker';
 import { View, StyleSheet } from 'react-native';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LanguageDropdownSelector = ({callback}) => {
 
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
+    const { t } = useTranslation();
     const [items, setItems] = useState([
         { label: 'English', value: 'eng' },
         { label: 'French', value: 'fre' },
@@ -20,7 +22,7 @@ const LanguageDropdownSelector = ({callback}) => {
     return(
         <View style={styles.container}>
             <DropDownPicker
-                placeholder="Select a language"
+                placeholder={t("screens.resources.text.chooseLanguage")}
                 open={open}
                 value={value}
                 items={items}

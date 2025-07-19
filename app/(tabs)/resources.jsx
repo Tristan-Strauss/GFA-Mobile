@@ -3,12 +3,14 @@ import LanguageDropdownSelector from "../../components/languageDropdownSelector"
 import { useState } from "react";
 import * as FileSystem from "expo-file-system";
 import { shareAsync } from "expo-sharing";
+import { useTranslation } from "react-i18next";
 
 const COTR_BOOK = require('../../assets/images/COTR_Cover.png');
 
 function resources() {
 
     const [selectedLanguage, setSelectedLanguage] = useState(null);
+    const { t } = useTranslation();
 
 
     function handleLanguageChange(value) {
@@ -92,12 +94,12 @@ function resources() {
 
     return (
         <View style={styles.mainContainer}>
-            <Text style={styles.title}>Resources</Text>
+            <Text style={styles.title}>{t("screens.resources.title")}</Text>
             <Image 
                 source={COTR_BOOK}
                 style={styles.image}
             />
-            <Text style={styles.text}>Select a language to download in</Text>
+            <Text style={styles.text}>{t("screens.resources.text.churchOnTheRock")}</Text>
             <LanguageDropdownSelector callback={(value) => handleLanguageChange(value)}/>
             <TouchableOpacity style={styles.button} onPress={handleDownload}>
                 <Text style={styles.downloadText}>Download</Text>

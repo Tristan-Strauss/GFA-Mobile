@@ -1,17 +1,25 @@
 import { Tabs } from "expo-router";
 import Ionicicons from "@expo/vector-icons/Ionicons";
+import LanguageSelector from "../../components/headerLanguageSelector";
+import { useTranslation } from "react-i18next";
 
 function TabLayout() {
+
+
+    const { t } = useTranslation();
+
+
     return(
         <Tabs
             screenOptions={{
                 tabBarActiveTintColor: "#ffd33d",
+                headerRight: () => <LanguageSelector />
             }}
         >
             <Tabs.Screen 
                 name="index"
                 options={{
-                    title: "Home",
+                    title: t("screens.index.title"),
                     tabBarIcon: ({ color, focused}) => (
                         <Ionicicons 
                             name={focused ? "home-sharp" : "home-outline"}
@@ -25,7 +33,7 @@ function TabLayout() {
             <Tabs.Screen 
                 name="principals"
                 options={{
-                    title: "Principals",
+                    title: t("screens.principals.title"),
                     tabBarIcon: ({color, focused}) => (
                         <Ionicicons 
                             name={focused ? "book-sharp" : "book-outline"}
@@ -39,7 +47,7 @@ function TabLayout() {
             <Tabs.Screen 
                 name="resources"
                 options={{
-                    title: "Resources",
+                    title: t("screens.resources.title"),
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicicons 
                             name={focused ? "library-sharp" : "library-outline"}
@@ -53,7 +61,7 @@ function TabLayout() {
             <Tabs.Screen
                 name="about"
                 options={{
-                    title: "About",
+                    title: t("screens.about.title"),
                     tabBarIcon: ({ color, focused }) => (
                         <Ionicicons 
                             name={focused ? "information-circle-sharp" : "information-circle-outline"}
