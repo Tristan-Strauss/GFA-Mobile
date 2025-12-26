@@ -44,6 +44,7 @@
     }
   },
   "common": {
-    "change_language": "Mudar idioma"
+    "change_language": "Mudar idioma",
+    "language_warning": "Idioma não suportado"
   }
 }

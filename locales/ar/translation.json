@@ -44,6 +44,7 @@
     }
   },
   "common": {
-    "change_language": "تغيير اللغة"
+    "change_language": "تغيير اللغة",
+    "language_warning": "اللغة غير مدعومة"
   }
 }

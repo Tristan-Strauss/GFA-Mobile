@@ -5,20 +5,25 @@ import { useTranslation } from "react-i18next";
 function PrincipalsPage() {
 
     const { t } = useTranslation();
-    const apostlesDoctrine = require("../../assets/audio/Apostles-Doctrine-1.mp3");
-    const repentanceAndFaith = require("../../assets/audio/Repentance-Faith.mp3")
-    const baptismIntoChrist = require("../../assets/audio/Baptism-Christ.mp3")
-    const baptismIntoWater = require("../../assets/audio/Baptism-Water.mp3")
-    const baptismIntoHolySpirit = require("../../assets/audio/Baptism-Holy-Spirit.mp3")
-    const baptismIntoSufferings = require("../../assets/audio/Baptism-Suffering.mp3")
-    const layingHands = require("../../assets/audio/Laying-Hands.mp3")
-    const resurrection = require("../../assets/audio/Resurrection.mp3")
-    const eternalJudgements = require("../../assets/audio/Eternal-judgements.mp3")
-    const perfection = require("../../assets/audio/Perfection.mp3")
+    const apostlesDoctrine = require("../../assets/audio/en/Apostles-Doctrine-1.mp3");
+    const repentanceAndFaith = require("../../assets/audio/en/Repentance-Faith.mp3")
+    const baptismIntoChrist = require("../../assets/audio/en/Baptism-Christ.mp3")
+    const baptismIntoWater = require("../../assets/audio/en/Baptism-Water.mp3")
+    const baptismIntoHolySpirit = require("../../assets/audio/en/Baptism-Holy-Spirit.mp3")
+    const baptismIntoSufferings = require("../../assets/audio/en/Baptism-Suffering.mp3")
+    const layingHands = require("../../assets/audio/en/Laying-Hands.mp3")
+    const resurrection = require("../../assets/audio/en/Resurrection.mp3")
+    const eternalJudgements = require("../../assets/audio/en/Eternal-judgements.mp3")
+    const perfection = require("../../assets/audio/en/Perfection.mp3")
 
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.heading}>{t("screens.principals.title")}</Text>
+
+            {t("language") !== "English" && (
+                <Text style={styles.warning_note}>{t("common.language_warning")}</Text>
+            )}
+
 
             <AudioPlayer title={t("screens.principals.text.apostlesDoctrine")} audioSource={apostlesDoctrine}/>
             <AudioPlayer title={t("screens.principals.text.repentanceAndFaith")} audioSource={repentanceAndFaith}/>
@@ -48,6 +53,10 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 18,
         paddingHorizontal: 20,
+    },
+    warning_note: {
+        fontSize: 12,
+        color: "red"
     },
 })
 
